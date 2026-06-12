@@ -1,7 +1,7 @@
 # Deployment Information
 
 ## Public URL
-https://<your-agent-url>.railway.app
+https://day12ha-tang-cloudvadeployment-production-2d4f.up.railway.app
 
 ## Platform
 Railway / Render / Cloud Run
@@ -10,20 +10,20 @@ Railway / Render / Cloud Run
 
 ### Health Check
 ```bash
-curl https://<your-agent-url>.railway.app/health
+curl https://day12ha-tang-cloudvadeployment-production-2d4f.up.railway.app/health
 # Expected: {"status": "ok"}
 ```
 
 ### Readiness Check
 ```bash
-curl https://<your-agent-url>.railway.app/ready
+curl https://day12ha-tang-cloudvadeployment-production-2d4f.up.railway.app/ready
 # Expected: {"status": "ready"}
 ```
 
 ### API Test (with authentication)
 ```bash
-curl -X POST https://<your-agent-url>.railway.app/ask \
-  -H "X-API-Key: secret-key-123" \
+curl -X POST https://day12ha-tang-cloudvadeployment-production-2d4f.up.railway.app/ask \
+  -H "X-API-Key: secret" \
   -H "Content-Type: application/json" \
   -d '{"question": "Hello"}'
 ```
@@ -37,8 +37,12 @@ curl -X POST https://<your-agent-url>.railway.app/ask \
 - MONTHLY_BUDGET_USD
 
 ## Screenshots
-> Thay thế các file ảnh trong thư mục `screenshots/` bằng ảnh của bạn.
 
-- [Deployment dashboard](image.png)
-- [Service running](running.png)
-- [Test results](test.png)
+### 1. Deployment dashboard
+![Deployment dashboard](image.png)
+
+### 2. Service running
+![Service running](running.png)
+
+### 3. Test results
+![Test results](image-2.png)
