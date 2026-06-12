@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: production-agent
+    env: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: AGENT_API_KEY
+        generateValue: true
+      - key: LOG_LEVEL
+        value: INFO
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: redis-cache
+          property: connectionString
+
+  - type: redis
+    name: redis-cache
+    plan: free
+    ipAllowList: [] # default is allow all internal
